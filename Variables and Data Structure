@@ -1,1 +1,121 @@
 
+Data Structure
+## Lists - Ordered Mutable collection of data
+## Tuples -  Ordered immutable items of list
+## Dictionaries - It stores Key:Value pairs for fast lookups 
+## Sets - Unordered collection of unique items(No duplicates)
+        ## - UNION  - INTERSECTION  - DIFFERENCE
+
+# LIST
+a = [1,2,3,4,5]
+text = ["A","B","C"]
+mix = [1,'A', True]
+
+# Access the list using INDEX
+print(a[1])
+print(text[1])
+print(mix[1])
+print(mix[-1])
+
+# Modify the list - Use '.append'
+text.append("D") # Add the data at the end 
+text.insert(2,"AA") # add the data at the given Index
+print(text)
+
+text.remove("AA") # removies the specific word
+print(text) 
+del text[1] # removes the data from specific index
+print(text)
+text.pop() # removes the last index
+print(text)
+
+# Slicing List
+sliced_a = a[1:3] # it slice the data from index 1 to index 2(before 3)
+print(sliced_a)
+
+
+# TUPLES
+color = ("RED", "GREEN", "YELLOW") 
+tup= (1)
+single_tup = (1,) # put a comma at the end to make it tuple
+print(type(tup))
+print(type(single_tup))
+
+# Access the Tuple using INDEX
+
+print(color[0])
+print(color[-1])
+
+
+# Dictionaries
+stud = {"Name":"Shyam","Age":30,"grade":"A"}
+stud1 = {"Name":"Shyam","Age":30,"grade":"A","Subject":"Data Science"}
+# Access the Dictionaries using KEY
+stud["Name"]
+
+# Modify the Dictionaries using KEY
+stud["Subject"] = "Data Science"
+print(stud)
+stud["Age"] = 32 # Edit the existing data in Dictionary
+print(stud)
+
+del stud["grade"]
+print(stud)
+stud.pop("Subject")
+print(stud)      
+
+# Iterate through Dictionary
+for key, value in stud1.items():
+    print(key,value)
+
+
+# Sets
+num = {1,2,3,4,5}
+print("num - ",num)
+empty_sets = set()
+print(empty_sets)
+
+# Modify the Sets
+num.add(6)
+print("num - ", num)
+num.remove(2)
+print("num - ",num)
+
+# SET Operations
+set1 = {1,2,3}
+set2 = {3,4,5}
+print(set1 | set2) # UNION
+print(set1 & set2) # INTERSECTION
+print(set1 - set2) # DIFFERENCE - prints the value from first tuple only
+
+
+
+# Exercise 1 - Manipulate data in Dictionary
+person = {"name":"Alice","Age":"30","grade":"A"}
+print(person)
+# Add
+person["address"]= "Irvine,CA"
+print(person)
+# Delete
+if "grade" in person:
+    del person["grade"]
+print(person)
+
+# Exercise 2 - Word Frequency Counter
+
+sentence = input("Enter the Sentence")
+
+words = sentence.split()
+
+word_count = {}
+
+for word in words:
+    word = word.lower()
+    if word in word_count:
+        word_count[word] += 1
+    else:
+        word_count[word] = 1
+
+print(word_count)
+
+
