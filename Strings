@@ -1,0 +1,91 @@
+# Concatination
+first = "Hello"
+last = "World"
+result = first +" "+last # Concatination
+print(result)
+
+# Slicing
+text = "Python Programming"
+print(text[0:6]) # Slicing
+print(text[-11:]) # Slicing
+
+# Fromatting
+name = "Shyam"
+Age = 30
+print(f"My name is {name}, and I am {Age} years old")
+
+===========================================================
+
+# Common String Methods
+# Split()
+sent = "Python   is   fun"
+words = sent.split()
+print(words)
+type(words)
+
+# Join()
+new_sent = " ".join(words)
+print(new_sent)
+
+# Replace()
+text = "I like Tea"
+updated_text = text.replace("Tea", "Coffee")
+print(updated_text)
+
+# strip()
+messy = "    Hello World     "
+print(messy)
+nomessy = messy.strip()
+print(nomessy)
+
+# Regex
+# Regular Expressions for Pattern Matching
+# Common functions
+# re.search(pattern, string)
+# re.findall(pattern, string)
+# re.sub(pattern, replacement, string)
+
+import re
+text = "Contact me at 949-578-0626"
+
+digits = re.findall(r"\d+",text)
+print(digits)
+type(digits)
+
+new_text = re.sub(r"\d", "X", text)
+print(new_text)
+
+# Exercise
+# Create a Text Cleaner
+def text_cleaner(text):
+    # remove punctuation
+    text = re.sub(r"[^\w\s]","",text)
+    # Remove extra space
+    text = " ".join(text.split())
+    # Convert to lower case
+    return text.lower()
+
+input_text = "I    am !!! ---  programming !!!!....."
+print("Clear Text:" , text_cleaner(input_text))
+
+# Exercise : Check if the string is a Palindrome 
+def is_palendrome(text):
+    text = "".join(char.lower() for char in text if char.isalnum())
+    return text == text[::-1] # To check Palendrome
+
+input_text = input("Ente the text")
+if is_palendrome(input_text):
+    print(f'"{check}" is a palendrome')
+else:
+    print(f'"{check }" is not a palendorme')
+
+
+# Exercise : Count the numebr of vowels in a string
+# Exercise : Find and replace all email addressed in a text using regex
+# Exercise : reverse the words in a sentence(not letters)
+
+
+
+
+
+
