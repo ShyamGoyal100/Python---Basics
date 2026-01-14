@@ -1,0 +1,89 @@
+# Numpy for Numerical computing
+import numpy as np
+
+# Numpy basiscs - Array
+
+arr = np.array([1,2,3,4])
+print(arr)
+
+# Create a matrix
+zero = np.zeros([2,8])
+print(zero)
+
+# Matrix of 1's
+zero = np.ones([2,8])
+print(zero)
+
+# Range Arrays
+range_array = np.arange(1,10,2)
+print(range_array)
+
+linspace_array = np.linspace(0,20,5)
+print(linspace_array)
+
+# Manipulating Arrays
+arr = np.array([1,2,3,4,5,6,7,8,9])
+new_arr = arr.reshape(3,3) # Chaneg shape
+print(new_arr)
+
+arr = np.array((1,2,3))
+expanded = arr[:,np.newaxis] # Add dimensions to array
+print(expanded)
+
+
+# Basic operaions in Array
+# Element wise operations
+a = np.array([1,2,3])
+b = np.array([4,5,6])
+print(a+b)
+print(a-b)
+print(a*b)
+print(a/b)
+# Mathematical operations
+arr = np.array([4,16,25])
+print(np.sqrt(arr))
+print(np.sum(arr))
+print(np.mean(arr))
+print(np.max(arr))
+
+
+# Array Indexing, slicing, and Reshaping 
+ar = np.array([10,20,30,40,50,60])
+print(ar)
+print(ar[2]) # Indexing
+print(ar[-1]) # Indexing
+
+print(ar[0:3]) # slicing
+print(ar[-2:]) # slicing
+
+reshaped_ar = ar.reshape(2,3) # Reshaping
+print(reshaped_ar)
+
+# Exercise - Generate Array for basic operations
+
+a = np.arange(1,6)
+b = np.arange(6,11)
+
+print(a)
+print(b)
+print("Addition",a+b)
+print("Substraction",a-b)
+print("Multiplication",a*b)
+print("Division :", a/b)
+
+# Exercise - Create 3*3 matrix and perform operations
+matrix = np.array([[1,2,3],[4,5,6],[7,8,9]])
+print("Original Matrix \n",matrix)
+
+transpose = matrix.T
+print("Transpose Matrix : \n", transpose)
+
+matrix2 = np.array([[9,8,7],[6,5,4],[3,2,1]])
+print("Addition : \n",matrix+matrix2)
+print("Multiplication : \n",matrix*matrix2)
+
+# Exercise - Create a 4*4 matrix and calculate the sum of its rows and columns
+# Exercise - Write a program to normalize an Array(scale values between 0 and 1)
+# Exercise - Generate a random arry and find the MIN and MAX values
+
+
