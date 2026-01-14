@@ -80,7 +80,7 @@ else:
     print(f'"{check }" is not a palendorme')
 
 
-# Exercise : Count the numebr of vowels in a string
+# Exercise : Count the number of vowels in a string
 # Exercise : Find and replace all email addressed in a text using regex
 # Exercise : reverse the words in a sentence(not letters)
 
