@@ -1,0 +1,73 @@
+# Filling Missing Values
+df = df.dropna() # Drops entire rows with missing values at specific rows
+df = df.dropna(axis = 1) # Drops Columns with missing values
+df["sepal_length"] = df["sepal_length"].fillna(0) # Fill missing cells in columns with 0
+
+# Types of fills : Forward and backward fill
+df.fillna(method="ffill") # Forward Fill
+df.fillna(method="bfill") # Backward Fill
+
+# Interpolation
+df["sepal_length"] = df["sepal_length"].interpolate() # Fills the data as per the reference to othe columns
+
+
+
+# Data Transformation
+import pandas as pd
+# Renaming Columns
+df = df.rename(columns={"old_name":"new_name"}) # Renaming Columns
+
+# Changing Data Types
+df["sepal_length"] = df["sepal_length"].astype("float") # Change Data Type to Float
+#df["column_name"] = pd.to_datetime(df["column_name"]) # Change Data Type from String to DateTime
+
+# Creating and modifying columns
+#df["new_column"] = df["Existign column"]*2
+
+# Combining and Merging DataFrames
+#combined = pd.concat([df1,df2], axis=0) #Combine along Rows
+#combined = pd.concat([df1,df2], axis=1) #Combine along Columns
+#merged = pd.merge(df1,df2,on-"common_columns") # Merging 2 dataframes based on a commmon column
+#merged = pd.merge(df1,df2,how="left",on="common_columns") # Left Join
+#merged = pd.merge(df1,df2,how="inner",on="common_columns") # Inner Join
+
+#joined = df1.join(df2, how="inner") # Join DataFrame unsing Index Alignment 
+
+# Exercise : Clean a Dataset by handling Missing Values and Renaming Columns
+
+import pandas as pd
+import numpy as np
+data = {
+    "Name" : ["Alice","Bob",np.nan,"David"],
+    "Age" : [25,np.nan, 30,35],
+    "Score": [85,90,np.nan,88],
+}
+df1 = pd.DataFrame(data)
+print("Original Dataset : \n",df1)
+df1["Age"] = df1["Age"].fillna(df1["Age"].mean())
+
+# Exercise : Merge two Datasets and perform Data Transformation
+
+df1 = pd.DataFrame({
+    "ID":[1,2,3],
+    "Name ":["Alice","Bob","Charlie"],
+    "Age":[25,30,35],
+})
+
+df2 = pd.DataFrame({
+    "ID":[1,2,3],
+    "Score":[85,90,80],
+})
+
+print("Dataset 1 : \n",df1)
+print("Dataset 2 : \n",df2)
+
+merged = pd.merge(df1, df2, how="inner",on="ID")
+print("Merged Dataset : \n",merged)
+merged["Score_Percentage"] = (merged["Score"]/100)*100
+print("Transformed Dataset \n", merged)
+
+# Exerceise : Drop columns with more than 50% missing values
+# Exercise : Merge three datasets and analyze relationships between them
+# Exercise : Convert categorical data to numerical using one-hot encoding
+
